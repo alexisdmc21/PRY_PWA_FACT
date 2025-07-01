@@ -1,74 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Aplicación de Facturación</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./lib/bootstrap-5.3.6-dist/css/bootstrap.min.css" />
-  </head>
-  <body>
-    <h1>Aplicación de Facturación</h1>
 
-    <!-- Registro de Clientes -->
-    <section>
-      <h2>Registro de Clientes</h2>
-      <label for="cliente-nombre">Nombre:</label>
-      <input type="text" id="cliente-nombre" />
+<head>
+  <meta charset="UTF-8" />
+  <title>Aplicación de Facturación</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./lib/bootstrap-5.3.6-dist/css/bootstrap.min.css" />
+  <link rel="manifest" href="./manifest.json">
+</head>
 
-      <label for="cliente-cedula">Cédula:</label>
-      <input type="text" id="cliente-cedula" />
+<body>
+  <h1>Aplicación de Facturación</h1>
 
-      <label for="cliente-direccion">Dirección:</label>
-      <input type="text" id="cliente-direccion" />
+  <!-- Registro de Clientes -->
+  <section>
+    <h2>Registro de Clientes</h2>
+    <label for="cliente-nombre">Nombre:</label>
+    <input type="text" id="cliente-nombre" />
 
-      <button id="btn-agregar-cliente">Agregar Cliente</button>
+    <label for="cliente-cedula">Cédula:</label>
+    <input type="text" id="cliente-cedula" />
 
-      <cliente-list></cliente-list>
-    </section>
+    <label for="cliente-direccion">Dirección:</label>
+    <input type="text" id="cliente-direccion" />
 
-    <!-- Registro de Productos -->
-    <section>
-      <h2>Registro de Productos</h2>
-      <label for="producto-nombre">Nombre del Producto:</label>
-      <input type="text" id="producto-nombre" />
+    <button id="btn-agregar-cliente">Agregar Cliente</button>
 
-      <label for="producto-codigo">Código:</label>
-      <input type="text" id="producto-codigo" />
+    <cliente-list></cliente-list>
+  </section>
 
-      <label for="producto-precio">Precio:</label>
-      <input type="number" id="producto-precio" step="0.01" />
+  <!-- Registro de Productos -->
+  <section>
+    <h2>Registro de Productos</h2>
+    <label for="producto-nombre">Nombre del Producto:</label>
+    <input type="text" id="producto-nombre" />
 
-      <button id="btn-agregar-producto">Agregar Producto</button>
+    <label for="producto-codigo">Código:</label>
+    <input type="text" id="producto-codigo" />
 
-      <producto-list></producto-list>
-    </section>
+    <label for="producto-precio">Precio:</label>
+    <input type="number" id="producto-precio" step="0.01" />
 
-    <!-- Factura -->
-    <section>
-      <h2>Factura</h2>
-      <label for="cliente-select">Cliente:</label>
-      <select id="cliente-select"></select>
+    <button id="btn-agregar-producto">Agregar Producto</button>
 
-      <label for="producto-select">Producto:</label>
-      <select id="producto-select"></select>
+    <producto-list></producto-list>
+  </section>
 
-      <label for="producto-cantidad">Cantidad:</label>
-      <input type="number" id="producto-cantidad" />
+  <!-- Factura -->
+  <section>
+    <h2>Factura</h2>
+    <label for="cliente-select">Cliente:</label>
+    <select id="cliente-select"></select>
 
-      <button id="btn-agregar-producto-factura">Agregar a Factura</button>
-      <button id="btn-guardar-factura">Guardar Factura</button>
+    <label for="producto-select">Producto:</label>
+    <select id="producto-select"></select>
 
-      <factura-resumen></factura-resumen>
-    </section>
-    <!-- Facturas Guardadas -->
-    <section>
-      <h2>Facturas Guardadas</h2>
-      <label for="factura-select">Selecciona una factura:</label>
-      <select id="factura-select"></select>
-      <div id="factura-detalle"></div>
-    </section>
+    <label for="producto-cantidad">Cantidad:</label>
+    <input type="number" id="producto-cantidad" />
 
-    <script type="module" src="./js/main.js"></script>
-    <script src="./lib/bootstrap-5.3.6-dist/js/bootstrap.min.js"></script>
-  </body>
+    <button id="btn-agregar-producto-factura">Agregar a Factura</button>
+    <button id="btn-guardar-factura">Guardar Factura</button>
+
+    <factura-resumen></factura-resumen>
+  </section>
+  <!-- Facturas Guardadas -->
+  <section>
+    <h2>Facturas Guardadas</h2>
+    <label for="factura-select">Selecciona una factura:</label>
+    <select id="factura-select"></select>
+    <div id="factura-detalle"></div>
+  </section>
+
+  <script type="module" src="./js/main.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function(){
+        navigator.serviceWorker.register('./service-worker.js')
+          .then(function(registration){
+            console.log('Service Worker registrado con éxito:', registration);
+          })
+          .catch(function(error) {
+            console.error('Error al registrar el Service Worker:', error);
+          });
+      });
+    }else{
+      console.warn('Service workers no son soportados por este navegador.');
+    }
+  </script>
+</body>
+
 </html>
