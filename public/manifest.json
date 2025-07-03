@@ -1,11 +1,11 @@
 {
     "name":"MY APP DE FACTURACION CON PWA",
-    "short_name":"Facturación PWA",
-    "description":"Facturacion en PWA",
+    "short_name":"Facturación con PWA",
+    "description":"Sistema de Facturación con PWA",
     "start_url":"./index.html",
     "display":"standalone",
-    "theme_color":"#800080",
-    "background_color":"#800080",
+    "theme_color":"#228B22",
+    "background_color":"#ffffff",
     "icons":[
         {
             "src":"./icons/facturacion-256x256.png",

@@ -15,7 +15,7 @@ class ClienteList extends HTMLElement {
         : // Si hay clientes, los muestra en una lista
           `<h3>Clientes Registrados:</h3>` +
           clientes
-            .map((c) => "<p>" + c.nombre + " (" + c.cedula + ") - " + c.direccion + "</p>")
+            .map((c) => "<table>" + c.nombre + " (" + c.cedula + ") - " + c.direccion + "</table>")
             .join("");
   }
 }

@@ -3,6 +3,7 @@ const CACHE_NAME = "pwa-facturacion-cache-v1";
 const archivosParaCachear = [
     './',
     './index.html',
+    './css/styles.css',
     './manifest.json',
     './js/data.js',
     './js/main.js',
