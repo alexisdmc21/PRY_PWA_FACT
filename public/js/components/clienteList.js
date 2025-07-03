@@ -12,11 +12,25 @@ class ClienteList extends HTMLElement {
       clientes.length === 0
         ? // Si no hay clientes, muestra un mensaje
           "<h3>Clientes Registrados:</h3><p>No hay clientes registrados.</p>"
-        : // Si hay clientes, los muestra en una lista
-          `<h3>Clientes Registrados:</h3>` +
+        : // Si hay clientes, los muestra en una tabla
+          `<h3>Clientes Registrados:</h3>
+           <table border="1">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Cédula</th>
+                <th>Dirección</th>
+              </tr>
+            </thead>
+            <tbody>` +
           clientes
-            .map((c) => "<table>" + c.nombre + " (" + c.cedula + ") - " + c.direccion + "</table>")
+            .map((c) => "<tr>" +
+              "<td>" + c.nombre + "</td>" +
+              "<td>" + c.cedula + "</td>" +
+              "<td>" + c.direccion + "</td>" +
+              "</tr>")
             .join("");
+            "</tbody></table>";
   }
 }
 // Registra el componente personalizado para poder usar <cliente-list> en HTML
