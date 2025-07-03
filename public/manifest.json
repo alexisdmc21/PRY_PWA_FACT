@@ -2,14 +2,14 @@
     "name":"MY APP DE FACTURACION CON PWA",
     "short_name":"Facturación PWA",
     "description":"Facturacion en PWA",
-    "start_url":"index.html",
+    "start_url":"./index.html",
     "display":"standalone",
     "theme_color":"#800080",
     "background_color":"#800080",
     "icons":[
         {
-            "src":"https://cdn-icons-png.flaticon.com/128/950/950258.png",
-            "sizes":"128x128",
+            "src":"./icons/facturacion-256x256.png",
+            "sizes":"256x256",
             "type":"image/png"
         }
     ]

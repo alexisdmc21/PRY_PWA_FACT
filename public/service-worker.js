@@ -15,7 +15,8 @@ const archivosParaCachear = [
     './js/components/productoList.js',
     './js/helpers/facturasGuardadas.js',
     './js/helpers/limpiarCampos.js',
-    './js/helpers/selects.js'
+    './js/helpers/selects.js',
+    './icons/facturacion-256x256.png'
 ];
 
 self.addEventListener('install',(event)=>{
