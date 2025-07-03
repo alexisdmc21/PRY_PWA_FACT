@@ -33,10 +33,8 @@ section {
 
 h2 {
   color: #2d6cdf;
-  margin-bottom: 18px;
+  margin-bottom: 4px;
   font-size: 1.3em;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 6px;
 }
 
 label {
@@ -75,8 +73,7 @@ button {
   padding: 9px 18px;
   font-size: 1em;
   cursor: pointer;
-  margin-top: 10px;
-  margin-right: 8px;
+  margin: 10px 8px 10px 0px;
   transition: background 0.2s;
   box-shadow: 0 1px 3px rgba(44, 62, 80, 0.07);
 }
@@ -103,6 +100,9 @@ factura-resumen {
   h2 {
     font-size: 1.1em;
   }
+  h3 {
+    font-size: 1.1em;
+  }
 }
 
 #factura-detalle {
@@ -111,4 +111,28 @@ factura-resumen {
   padding: 12px 16px;
   margin-top: 10px;
   font-size: 1em;
+}
+
+h3{
+  color: #2d6cdf;
+  font-size: 1.3em;
+}
+
+.tablaRegistroClientes{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: #f8f8ff;
+}
+
+.tablaRegistroClientes th,
+.tablaRegistroClientes td {
+  border: 1px solid #2d6cdf;
+  padding: 8px;
+  text-align: center;
+}
+
+.tablaRegistroClientes th {
+  background-color: #2d6cdf;
+  color: #fff;
 }

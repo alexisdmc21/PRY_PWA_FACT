@@ -14,7 +14,7 @@ class ClienteList extends HTMLElement {
           "<h3>Clientes Registrados:</h3><p>No hay clientes registrados.</p>"
         : // Si hay clientes, los muestra en una tabla
           `<h3>Clientes Registrados:</h3>
-           <table border="1">
+           <table border="1" class="tablaRegistroClientes">
             <thead>
               <tr>
                 <th>Nombre</th>
