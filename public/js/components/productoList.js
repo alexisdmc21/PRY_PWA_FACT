@@ -27,7 +27,7 @@ class ProductoList extends HTMLElement {
             .map((p) => "<tr>" +
                           "<td>" + p.nombre + "</td>" +
                           "<td>" + p.id + "</td>" +
-                          "<td>" + p.precio + "</td>" +
+                          "<td>$" + p.precio.toFixed(2) + "</td>" +
                         "</tr>")
             .join("");
             `</tbody></table>`;
