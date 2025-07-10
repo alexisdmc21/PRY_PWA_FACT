@@ -23,7 +23,6 @@ class FacturaResumen extends HTMLElement {
               "<td>" + prod.nombre + "</td>" +
               "<td>" + item.cantidad + "</td>" +
               "<td>$" + (prod.precio * item.cantidad).toFixed(2) + "</td>" +
-              "<td>$" + facturaActual.total.toFixed(2) + "</td>" +
               "</tr>"
           : "";
       })
@@ -37,16 +36,16 @@ class FacturaResumen extends HTMLElement {
           <th>Producto</th>
           <th>Cantidad</th>
           <th>Subtotal</th>
-          <th>Total</th>
         </tr>
       </thead>
       <tbody>` +
       itemsHTML +
       `</tbody>
-    </table>` +
-    "<strong>" + "Total: $" + facturaActual.total.toFixed(
-      2
-    ) + "</strong>";
+      <tr>
+        <td colspan="2">Total</td>
+        <td>$${facturaActual.total.toFixed(2)}</td>
+    </table>
+    `;
   }
 }
 // Registra el componente personalizado para poder usar <factura-resumen> en HTML
