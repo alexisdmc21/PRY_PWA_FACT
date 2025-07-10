@@ -118,21 +118,21 @@ h3{
   font-size: 1.3em;
 }
 
-.tablaRegistroClientes{
+table{
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
   background: #f8f8ff;
 }
 
-.tablaRegistroClientes th,
-.tablaRegistroClientes td {
+table th,
+table td {
   border: 1px solid #2d6cdf;
   padding: 8px;
   text-align: center;
 }
 
-.tablaRegistroClientes th {
+table th {
   background-color: #2d6cdf;
   color: #fff;
 }
