@@ -39,17 +39,44 @@ export function mostrarDetalleFactura(detalleElement, idx) {
       const prod = productos.find((prod) => prod.id === p.idProducto);
       const nombre = prod ? prod.nombre : p.idProducto;
       const precio = prod ? prod.precio : "";
-      return "<li>" + nombre + " x" + p.cantidad + " - $" + p.subtotal.toFixed(2) + "</li>";
+      const subtotal = precio * p.cantidad;
+      return (
+      "<tr>" +
+        "<td>" + nombre + "</td>" +
+        "<td>" + p.cantidad + "</td>" +
+        "<td>$" + subtotal.toFixed(2) + "</td>" +
+      "</tr>"
+      );
     })
     .join("");
   // Muestra el detalle completo de la factura en el elemento destino
   detalleElement.innerHTML =
-    "<strong>Cliente:</strong>" + (cliente ? cliente.nombre : "Sin cliente") + "<br>" +
-    "<strong>Productos:</strong>" +
-    "<ul>" +
+    "<table>" +
+      "<thead>" +
+        "<tr>" +
+          "<th>Cliente: </th>" +
+           "<td colspan='2'>" + (cliente ? cliente.nombre : "Sin cliente") + "</td>" +
+        "</tr>" +
+      "</thead>" +
+    "<tbody>" +
+      "<tr>" +
+        "<td colspan='3'>Productos:</td>" +
+      "</tr>" +
+      "<tr>" +
+        "<th>Nombre</th>" +
+        "<th>Cantidad</th>" +
+        "<th>Subtotal</th>" +
+      "</tr>" +
       productosHTML +
-    "</ul>" +
-    "<strong>Total:</strong> $" + factura.total.toFixed(2) + "<br>" +
-    "<strong>Fecha:</strong> " + factura.fecha
+      "<tr>" +
+        "<th>Total:</th>" +
+        "<td colspan='2'>" + factura.total.toFixed(2) + "</td>" +
+      "</tr>" +
+      "<tr>" +
+        "<th>Fecha:</th>" +
+        "<td colspan='2'>" + factura.fecha + "</td>" +
+      "</tr>" +
+    "</tbody>" +
+  "</table>"
   ;
 }
